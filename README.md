@@ -1,12 +1,12 @@
-<img width="780" alt="ODock animated preview" src="preview.gif" />
+<img width="880" alt="ODock animated preview" src="preview.gif" />
 
 # ODock
 
 A standalone fisheye dock for the Omarchy shell with macOS-style icon magnification, smooth animations, intelligent hide/reveal, window cycling, App Expose, and full customization, all in a Quickshell plugin.
 
-> **ODock is an independent project, built on the MIT-licensed [Animated Dock](https://github.com/Davedes83/animated-dock) by [davedes](https://github.com/Davedes83).** The magnifier, autohide/dodge, window cycling, four edge positions, drag-to-reorder and theming originate there. ODock adds App Expose, a launch bounce, and macOS-style glass, badge and indicator styling. See [Credits](#credits).
+On top of the classic magnifier, autohide/dodge, window cycling, four edge positions, drag-to-reorder and theming, ODock adds App Expose, a launch bounce, and macOS-style glass, badge and indicator styling.
 
-The core feature is the continuous magnifier: as your pointer moves, icons flow around it with a smooth quadratic scale falloff, anchored to stay under your cursor without chasing. On top of that it adds:
+Features:
 
 - Four edges with flexible positioning (start/center/end)
 - Smart hide: pressure-reveal hotspot with dodge for overlapping windows
@@ -158,12 +158,6 @@ right-click menu.
 
 It only removes symlinks that point back into this checkout, so anything you
 installed another way is left alone.
-
-## Credits
-
-ODock is an independent project built on [Animated Dock](https://github.com/Davedes83/animated-dock) by [davedes](https://github.com/Davedes83), used under the MIT License. The original copyright notice is retained in [LICENSE](LICENSE).
-
-The animated preview above was captured from a live ODock session.
 
 ## License
 
