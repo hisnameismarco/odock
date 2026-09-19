@@ -1,4 +1,4 @@
-<img width="880" alt="ODock animated preview" src="preview.gif" />
+<img width="880" alt="ODock preview" src="preview.png" />
 
 # ODock
 
