@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "odock",
+  "name": "ODock",
+  "version": "1.0.0",
+  "author": "Marco (hisnameismarco)",
+  "description": "Fisheye-magnifying dock for the Omarchy shell with continuous pointer magnification, intelli-hide autohide, four edge positions, scroll-to-cycle windows, drag-to-reorder, running indicators, App Expose window grids, launch bounce, and macOS-style glass styling. Derived from davedes' Animated Dock (MIT).",
+  "kinds": [
+    "panel"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "panel": "Dock.qml"
+  }
+}
