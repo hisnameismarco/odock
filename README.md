@@ -1,10 +1,10 @@
-<img width="665" alt="preview" src="preview.png" />
+<img width="780" alt="ODock animated preview" src="preview.gif" />
 
 # ODock
 
-A fisheye dock for the Omarchy shell with macOS-style icon magnification, smooth animations, intelligent hide/reveal, window cycling, App Expose, and full customization, all in a Quickshell plugin.
+A standalone fisheye dock for the Omarchy shell with macOS-style icon magnification, smooth animations, intelligent hide/reveal, window cycling, App Expose, and full customization, all in a Quickshell plugin.
 
-> **ODock is a fork of [Animated Dock](https://github.com/Davedes83/animated-dock) by [davedes](https://github.com/Davedes83), used under the MIT License.** The magnifier, autohide/dodge, window cycling, four edge positions, drag-to-reorder and theming come from that project. ODock adds App Expose, a launch bounce, and macOS-style glass, badge and indicator styling. See [Credits](#credits).
+> **ODock is an independent project, built on the MIT-licensed [Animated Dock](https://github.com/Davedes83/animated-dock) by [davedes](https://github.com/Davedes83).** The magnifier, autohide/dodge, window cycling, four edge positions, drag-to-reorder and theming originate there. ODock adds App Expose, a launch bounce, and macOS-style glass, badge and indicator styling. See [Credits](#credits).
 
 The core feature is the continuous magnifier: as your pointer moves, icons flow around it with a smooth quadratic scale falloff, anchored to stay under your cursor without chasing. On top of that it adds:
 
@@ -161,7 +161,9 @@ installed another way is left alone.
 
 ## Credits
 
-ODock is derived from [Animated Dock](https://github.com/Davedes83/animated-dock) by [davedes](https://github.com/Davedes83), used under the MIT License. The original copyright notice is retained in [LICENSE](LICENSE).
+ODock is an independent project built on [Animated Dock](https://github.com/Davedes83/animated-dock) by [davedes](https://github.com/Davedes83), used under the MIT License. The original copyright notice is retained in [LICENSE](LICENSE).
+
+The animated preview above was captured from a live ODock session.
 
 ## License
 
