@@ -31,7 +31,7 @@ To match the new appearance on an existing installation, set these keys in the `
 }
 ```
 
-[Watch the v1.1.0 demo (MP4)](https://github.com/hisnameismarco/odock/releases/download/v1.1.0/odock-v1.1.0-demo.mp4). Recorded in an isolated demo shell, with a neutral stage and real pointer motion across the icons.
+[Watch the v1.1.0 demo (MP4)](demo-v1.1.0.mp4). Recorded in an isolated demo shell, with a neutral stage and real pointer motion across the icons. The same file is attached to the [v1.1.0 release](https://github.com/hisnameismarco/odock/releases/tag/v1.1.0).
 
 ## Requirements
 
