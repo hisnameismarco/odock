@@ -1,5 +1,11 @@
 <img width="880" alt="ODock preview" src="preview.png" />
 
+<p align="center">
+  <video src="https://github.com/hisnameismarco/odock/raw/refs/heads/main/demo-v1.1.0.mp4" poster="https://raw.githubusercontent.com/hisnameismarco/odock/main/preview.png" autoplay loop muted playsinline width="960">
+    <a href="demo-v1.1.0.mp4">Watch the ODock v1.1.0 demo</a>
+  </video>
+</p>
+
 # ODock
 
 A standalone fisheye dock for the Omarchy shell with macOS-style icon magnification, smooth animations, intelligent hide/reveal, window cycling, App Expose, and full customization, all in a Quickshell plugin.
