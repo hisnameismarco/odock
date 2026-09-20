@@ -7,8 +7,7 @@
   "magnify": true,
   "spacing": 4,
   "padding": 8,
-  "radius": 100,
-  "backgroundOpacity": 0.75,
+  "backgroundOpacity": 0.65,
   "iconOpacity": 1.0,
   "tiles": false,
   "tileOpacity": 0.15,
@@ -38,5 +37,9 @@
     {
       "desktop": "vivaldi-stable"
     }
-  ]
+  ],
+  "borderOpacity": 0.22,
+  "cornerShape": "rounded",
+  "cornerRadius": 24,
+  "animation": 140
 }

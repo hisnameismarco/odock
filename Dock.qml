@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Effects
 import Quickshell
 import Quickshell.Io
 import Quickshell.Wayland
@@ -200,11 +201,11 @@ Item {
   // ANIM_ICON_RAISE is 0.5).
   readonly property real zoomRaise: fraction("zoomRaise", 0.5)
   // Animation length of the reflow, ms.
-  readonly property int animMs: Math.round(num0("animation", 110))
+  readonly property int animMs: Math.round(num0("animation", 140))
 
   // The slider's 0–1 override is applied on top of the theme's border color
   // (RGB preserved, alpha forced), so the label matches what renders.
-  readonly property real borderOpacity: fraction("borderOpacity", 1.0)
+  readonly property real borderOpacity: fraction("borderOpacity", 0.22)
   readonly property var dockBorder: flag("border", true)
     ? (root.borderOpacity < 1
       ? withBorderOpacity(Border.surfaceSpec("popups", "border", Color.popups.border, Math.max(1, Style.space(2))), root.borderOpacity)
@@ -785,7 +786,7 @@ Item {
   readonly property int tileRadiusPx: Math.round(root.slot * fraction("tileRadius", 0.23))
   readonly property real tileInset: fraction("tileInset", 0.76)
   readonly property real tileOpacity: fraction("tileOpacity", 0.16)
-  readonly property real backgroundOpacity: fraction("backgroundOpacity", 1.0)
+  readonly property real backgroundOpacity: fraction("backgroundOpacity", 0.65)
   readonly property real iconOpacity: fraction("iconOpacity", 1.0)
 
   readonly property color glyphColor: root.config.glyphColor === "accent" ? Color.accent : Color.popups.text
@@ -803,7 +804,7 @@ Item {
     if (cornerShape === "pill") return Math.max(1, Math.round(cardCross / 2))
     return root.config.cornerRadius !== undefined
       ? Style.space(num0("cornerRadius", 0))
-      : Style.cornerRadius
+      : Style.space(24)
   }
 
   // A cell's extent along the main axis.
@@ -1524,7 +1525,7 @@ Item {
           Component.onDestruction: if (counted) root.dockHovers -= 1
         }
 
-        BorderSurface {
+        Item {
           id: card
           // Inside the hit area the card sits away from the edge strip:
           // after it on left/top, before it on right/bottom.
@@ -1543,31 +1544,45 @@ Item {
           Behavior on height {
             NumberAnimation { duration: root.settingsOpen ? 0 : root.animMs; easing.type: Easing.OutCubic }
           }
-          radius: root.cardRadius
-          // The popup surface, not the raw palette background: a theme that
-          // tints its popups should tint the dock the same way.
-          color: Util.alpha(Color.popups.background, root.backgroundOpacity)
-          borderSpec: root.dockBorder
-
-          // Liquid-Glass sheen: a faint top-lit gradient inside the card plus
-          // a 1px specular rim, the way macOS's dock glass catches light.
-          // Drawn before the icon row so the icons stay on top.
-          Rectangle {
+          readonly property real radius: root.cardRadius
+          BorderSurface {
             anchors.fill: parent
             radius: card.radius
-            gradient: Gradient {
-              GradientStop { position: 0.0; color: Util.alpha("#ffffff", 0.10) }
-              GradientStop { position: 0.5; color: Util.alpha("#ffffff", 0.0) }
+            // The popup surface, not the raw palette background: a theme that
+            // tints its popups should tint the dock the same way.
+            color: Util.alpha(Color.popups.background, root.backgroundOpacity)
+            borderSpec: root.dockBorder
+
+            // Liquid-Glass sheen: a faint top-lit gradient inside the card plus
+            // a 1px specular rim, the way macOS's dock glass catches light.
+            // Drawn before the icon row so the icons stay on top.
+            Rectangle {
+              anchors.fill: parent
+              radius: card.radius
+              gradient: Gradient {
+                GradientStop { position: 0.0; color: Util.alpha("#ffffff", 0.08) }
+                GradientStop { position: 0.5; color: Util.alpha("#ffffff", 0.0) }
+              }
             }
-          }
-          Rectangle {
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.top: parent.top
-            anchors.margins: 1
-            height: 1
-            radius: 1
-            color: Util.alpha("#ffffff", 0.16)
+            Rectangle {
+              anchors.left: parent.left
+              anchors.right: parent.right
+              anchors.top: parent.top
+              anchors.leftMargin: card.radius
+              anchors.rightMargin: card.radius
+              anchors.topMargin: 1
+              height: 1
+              radius: 1
+              color: Util.alpha("#ffffff", 0.16)
+            }
+
+            layer.enabled: true
+            layer.effect: MultiEffect {
+              shadowEnabled: true
+              shadowColor: "#38000000"
+              shadowBlur: 0.65
+              shadowVerticalOffset: 8
+            }
           }
 
           opacity: dockWindow.shown ? 1 : 0

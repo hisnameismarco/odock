@@ -260,7 +260,7 @@ PopupWindow {
           maximum: 100
           step: 5
           integer: true
-          value: Math.round(settings.dock.fraction("borderOpacity", 1.0) * 100)
+          value: Math.round(settings.dock.borderOpacity * 100)
           fillColor: Color.accent
           knobColor: Color.accent
           onReleased: function(v) {
@@ -301,7 +301,7 @@ PopupWindow {
           maximum: 100
           step: 5
           integer: true
-          value: Math.round(settings.dock.fraction("backgroundOpacity", 1.0) * 100)
+          value: Math.round(settings.dock.backgroundOpacity * 100)
           fillColor: Color.accent
           knobColor: Color.accent
           onReleased: function(v) {

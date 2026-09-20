@@ -26,4 +26,4 @@ hl.window_rule({ match = { class = ".*" }, no_blur = true })
 
 -- ignore_alpha keeps the blur from bleeding through the fully transparent
 -- parts of the dock's surface, so only the card itself is frosted.
-hl.layer_rule({ match = "omarchy-odock", blur = true, ignore_alpha = 0.1 })
+hl.layer_rule({ match = { namespace = "^omarchy-odock$" }, blur = true, ignore_alpha = 0.3 })

@@ -15,6 +15,24 @@ Features:
 - **Launch bounce** — clicking an app that is not running yet hops its icon a couple of times, the way macOS does
 - macOS-style running dots, red count badges, a hover name bubble, and a liquid-glass sheen on the card
 
+## Version 1.1.0
+
+Coordinated glass styling with [OLauncher](https://github.com/hisnameismarco/OLauncher): 65% background opacity, 24 px rounded corners, softer borders and top highlights, a soft surface shadow, and quiet icon hover highlights. Reflow defaults to 140 ms. Explicit user settings continue to override these defaults.
+
+To match the new appearance on an existing installation, set these keys in the `odock` entry of `~/.config/omarchy/shell.json`:
+
+```json
+{
+  "backgroundOpacity": 0.65,
+  "borderOpacity": 0.22,
+  "cornerShape": "rounded",
+  "cornerRadius": 24,
+  "animation": 140
+}
+```
+
+[Watch the v1.1.0 demo (MP4)](https://github.com/hisnameismarco/odock/releases/download/v1.1.0/odock-v1.1.0-demo.mp4). Recorded in an isolated demo shell, with a neutral stage and real pointer motion across the icons.
+
 ## Requirements
 
 - Omarchy (Hyprland + the Quickshell-based `omarchy-shell`)
@@ -31,12 +49,18 @@ a starter set matched to your machine — the Omarchy Menu, a file manager,
 your default terminal, and your default browser — plus your running apps.
 Two optional extras the plugin manager doesn't do:
 
-- **Blur behind the dock** — copy [hypr/dock.lua](hypr/dock.lua) to
-  `~/.config/hypr/dock.lua` and add
-  `pcall(require, "hypr.dock")` to `~/.config/hypr/hyprland.lua`.
+- **Blur behind the dock** — with compositor blur already enabled, add the rule below to your Hyprland Lua configuration. It targets the current `omarchy-odock` namespace; rules for older docks do not apply. The optional [hypr/dock.lua](hypr/dock.lua) helper also configures global blur and disables blur for ordinary windows.
 - **The configurator on your PATH** — the dock always runs its bundled
   copy, but for terminal use link it:
   `ln -s ~/.config/omarchy/plugins/odock/bin/odock-config ~/.local/bin/`
+
+For the dock layer only:
+
+```lua
+hl.layer_rule({ match = { namespace = "^omarchy-odock$" }, blur = true, ignore_alpha = 0.3 })
+```
+
+Validate with `hyprctl reload` and `hyprctl configerrors`.
 
 ### From a checkout
 
@@ -73,7 +97,7 @@ Settings on the plugin entry:
 | `zoom` | Fisheye strength (0–1; 0.45 default) |
 | `zoomRaise` | How much of its growth an icon lifts out of the bar (0.5 default) |
 | `magnify` | The continuous lens (default true) |
-| `animation` | Reflow animation length, ms (default 110) |
+| `animation` | Reflow animation length, ms (default 140) |
 | `spacing`, `padding` | In the card |
 | `backgroundOpacity` | Card opacity (0–1) |
 | `glyphScale` | Nerd Font glyph ink as a fraction of the slot |

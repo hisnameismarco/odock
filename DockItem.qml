@@ -201,6 +201,13 @@ Item {
       NumberAnimation { duration: dock.animMs; easing.type: Easing.OutCubic }
     }
 
+    Rectangle {
+      anchors.fill: parent
+      radius: 12
+      color: Util.alpha(Color.popups.text, iconHover.hovered ? 0.07 : 0)
+      Behavior on color { ColorAnimation { duration: 140 } }
+    }
+
     // The uniform container. Icons come in circles, squares and bare
     // glyphs; a tile behind every one of them is what makes a row of
     // mismatched artwork read as a single set.
