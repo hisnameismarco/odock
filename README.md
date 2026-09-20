@@ -1,10 +1,6 @@
 <img width="880" alt="ODock preview" src="preview.png" />
 
-<p align="center">
-  <video src="https://github.com/hisnameismarco/odock/raw/refs/heads/main/demo-v1.1.0.mp4" poster="https://raw.githubusercontent.com/hisnameismarco/odock/main/preview.png" autoplay loop muted playsinline width="960">
-    <a href="demo-v1.1.0.mp4">Watch the ODock v1.1.0 demo</a>
-  </video>
-</p>
+<p align="center"><a href="demo-v1.1.0.mp4"><img src="preview.gif" alt="ODock v1.1.0 demo — click for the full MP4" width="960"></a></p>
 
 # ODock
 
