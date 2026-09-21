@@ -93,7 +93,7 @@ Item {
   // pick the size that lands the ink at the target fraction of the slot.
   TextMetrics {
     id: glyphMetrics
-    font.family: Style.font.resolvedFamily
+    font.family: Style.font.family
     font.pixelSize: cell.dock.slot
     text: cell.glyph
   }
@@ -204,7 +204,7 @@ Item {
     Rectangle {
       anchors.fill: parent
       radius: 12
-      color: Util.alpha(Color.popups.text, iconHover.hovered ? 0.07 : 0)
+      color: Util.alpha(Color.accent, iconHover.hovered ? 0.10 : 0)
       Behavior on color { ColorAnimation { duration: 140 } }
     }
 
@@ -232,7 +232,7 @@ Item {
       color: iconHover.hovered ? Color.accent : cell.dock.glyphColor
       Behavior on color { ColorAnimation { duration: 120 } }
       opacity: cell.dock.iconOpacity
-      font.family: Style.font.resolvedFamily
+      font.family: Style.font.family
       font.pixelSize: cell.dock.tiles
         ? Math.round(cell.glyphSize * cell.dock.tileInset)
         : cell.glyphSize
@@ -415,7 +415,7 @@ Item {
       anchors.centerIn: parent
       text: "󰐃"
       color: Color.popups.background
-      font.family: Style.font.resolvedFamily
+      font.family: Style.font.family
       font.pixelSize: Math.round(parent.width * 0.62)
     }
 
@@ -486,7 +486,7 @@ Item {
       anchors.centerIn: parent
       text: cell.wins.length
       color: "#ffffff"
-      font.family: Style.font.resolvedFamily
+      font.family: Style.font.family
       font.pixelSize: Math.round(parent.height * 0.68)
       font.bold: true
     }

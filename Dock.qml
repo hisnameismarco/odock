@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Effects
 import Quickshell
 import Quickshell.Io
 import Quickshell.Wayland
@@ -206,10 +205,12 @@ Item {
   // The slider's 0–1 override is applied on top of the theme's border color
   // (RGB preserved, alpha forced), so the label matches what renders.
   readonly property real borderOpacity: fraction("borderOpacity", 0.22)
+  // One uniform hairline in the same ink the bar's island uses, instead of the
+  // popups gradient, so the dock edge reads like the top bar's edge.
   readonly property var dockBorder: flag("border", true)
     ? (root.borderOpacity < 1
-      ? withBorderOpacity(Border.surfaceSpec("popups", "border", Color.popups.border, Math.max(1, Style.space(2))), root.borderOpacity)
-      : Border.surfaceSpec("popups", "border", Color.popups.border, Math.max(1, Style.space(2))))
+      ? withBorderOpacity(Border.flat(Color.foreground, Math.max(1, Style.space(1))), root.borderOpacity)
+      : Border.flat(Color.foreground, Math.max(1, Style.space(1))))
     : Border.none()
   readonly property var tipBorder: Border.surfaceSpec("tooltip", "border", Color.tooltip.border, Math.max(1, Style.space(1)))
 
@@ -1575,14 +1576,6 @@ Item {
               radius: 1
               color: Util.alpha("#ffffff", 0.16)
             }
-
-            layer.enabled: true
-            layer.effect: MultiEffect {
-              shadowEnabled: true
-              shadowColor: "#38000000"
-              shadowBlur: 0.65
-              shadowVerticalOffset: 8
-            }
           }
 
           opacity: dockWindow.shown ? 1 : 0
@@ -1645,7 +1638,7 @@ Item {
           anchors.centerIn: parent
           text: root.hoveredLabel
           color: Color.tooltip.text
-          font.family: Style.font.resolvedFamily
+          font.family: Style.font.family
           font.pixelSize: Style.font.bodySmall
         }
       }

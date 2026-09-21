@@ -101,7 +101,7 @@ Item {
           anchors.topMargin: Style.space(36)
           text: expose.title
           color: Color.popups.text
-          font.family: Style.font.resolvedFamily
+          font.family: Style.font.family
           font.pixelSize: Style.font.heading
           font.bold: true
         }
@@ -123,7 +123,7 @@ Item {
             anchors.centerIn: parent
             text: "\u2715"
             color: Color.popups.text
-            font.family: Style.font.resolvedFamily
+            font.family: Style.font.family
             font.pixelSize: Style.font.bodySmall
           }
 
@@ -169,7 +169,7 @@ Item {
                   visible: !thumb.hasContent
                   text: card.modelData.appId || ""
                   color: Util.alpha(Color.popups.text, 0.5)
-                  font.family: Style.font.resolvedFamily
+                  font.family: Style.font.family
                   font.pixelSize: Style.font.bodySmall
                 }
 
@@ -192,7 +192,7 @@ Item {
                 elide: Text.ElideRight
                 horizontalAlignment: Text.AlignHCenter
                 color: Color.popups.text
-                font.family: Style.font.resolvedFamily
+                font.family: Style.font.family
                 font.pixelSize: Style.font.bodySmall
               }
 

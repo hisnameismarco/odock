@@ -151,7 +151,7 @@ PopupWindow {
 
   FontMetrics {
     id: fm
-    font.family: Style.font.resolvedFamily
+    font.family: Style.font.family
     font.pixelSize: Style.font.bodySmall
   }
 
@@ -256,7 +256,7 @@ PopupWindow {
             anchors.verticalCenter: parent.verticalCenter
             text: row.modelData.glyph || ""
             color: rowHover.hovered ? Color.accent : Util.alpha(Color.popups.text, row.modelData.dim ? 0.6 : 1)
-            font.family: Style.font.resolvedFamily
+            font.family: Style.font.family
             font.pixelSize: Style.font.bodySmall
           }
 
@@ -266,7 +266,7 @@ PopupWindow {
             anchors.verticalCenter: parent.verticalCenter
             text: row.modelData.label || ""
             color: rowHover.hovered ? Color.accent : Util.alpha(Color.popups.text, row.modelData.dim ? 0.6 : 1)
-            font.family: Style.font.resolvedFamily
+            font.family: Style.font.family
             font.pixelSize: Style.font.bodySmall
             elide: Text.ElideRight
             width: menu.rowWidth - x - Style.spacing.lg

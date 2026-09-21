@@ -147,7 +147,7 @@ PopupWindow {
           anchors.verticalCenter: parent.verticalCenter
           text: "Dock Settings"
           color: Color.popups.text
-          font.family: Style.font.resolvedFamily
+          font.family: Style.font.family
           font.pixelSize: Style.font.body
           font.bold: true
           elide: Text.ElideRight
@@ -177,7 +177,7 @@ PopupWindow {
             anchors.verticalCenter: parent.verticalCenter
             text: "Icon Size"
             color: Color.popups.text
-            font.family: Style.font.resolvedFamily
+            font.family: Style.font.family
             font.pixelSize: Style.font.bodySmall
           }
 
@@ -185,7 +185,7 @@ PopupWindow {
             anchors.verticalCenter: parent.verticalCenter
             text: String(Math.round(sizeSlider.liveValue)) + " px"
             color: Util.alpha(Color.popups.text, 0.6)
-            font.family: Style.font.resolvedFamily
+            font.family: Style.font.family
             font.pixelSize: Style.font.caption
           }
         }
@@ -240,7 +240,7 @@ PopupWindow {
             anchors.verticalCenter: parent.verticalCenter
             text: "Border opacity"
             color: Color.popups.text
-            font.family: Style.font.resolvedFamily
+            font.family: Style.font.family
             font.pixelSize: Style.font.bodySmall
           }
 
@@ -248,7 +248,7 @@ PopupWindow {
             anchors.verticalCenter: parent.verticalCenter
             text: Math.round(borderOpacitySlider.liveValue) + "%"
             color: Util.alpha(Color.popups.text, 0.6)
-            font.family: Style.font.resolvedFamily
+            font.family: Style.font.family
             font.pixelSize: Style.font.caption
           }
         }
@@ -281,7 +281,7 @@ PopupWindow {
             anchors.verticalCenter: parent.verticalCenter
             text: "Background opacity"
             color: Color.popups.text
-            font.family: Style.font.resolvedFamily
+            font.family: Style.font.family
             font.pixelSize: Style.font.bodySmall
           }
 
@@ -289,7 +289,7 @@ PopupWindow {
             anchors.verticalCenter: parent.verticalCenter
             text: Math.round(bgOpacitySlider.liveValue) + "%"
             color: Util.alpha(Color.popups.text, 0.6)
-            font.family: Style.font.resolvedFamily
+            font.family: Style.font.family
             font.pixelSize: Style.font.caption
           }
         }
@@ -318,7 +318,7 @@ PopupWindow {
           width: settings.contentWidth
           text: "Position"
           color: Color.popups.text
-          font.family: Style.font.resolvedFamily
+          font.family: Style.font.family
           font.pixelSize: Style.font.bodySmall
         }
 
@@ -358,7 +358,7 @@ PopupWindow {
           width: settings.contentWidth
           text: "Corner Shape"
           color: Color.popups.text
-          font.family: Style.font.resolvedFamily
+          font.family: Style.font.family
           font.pixelSize: Style.font.bodySmall
         }
 
