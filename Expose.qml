@@ -95,6 +95,7 @@ Item {
         TapHandler { onTapped: expose.close() }
 
         Text {
+          textFormat: Text.PlainText
           id: headerText
           anchors.horizontalCenter: parent.horizontalCenter
           anchors.top: parent.top
@@ -120,6 +121,7 @@ Item {
           border.color: Util.alpha(Color.popups.text, 0.35)
 
           Text {
+            textFormat: Text.PlainText
             anchors.centerIn: parent
             text: "\u2715"
             color: Color.popups.text
@@ -165,6 +167,7 @@ Item {
                 clip: true
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.centerIn: parent
                   visible: !thumb.hasContent
                   text: card.modelData.appId || ""
@@ -183,6 +186,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 id: cardTitle
                 anchors.top: thumbFrame.bottom
                 anchors.topMargin: Style.space(5)

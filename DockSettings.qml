@@ -143,6 +143,7 @@ PopupWindow {
         spacing: Style.spacing.md
 
         Text {
+          textFormat: Text.PlainText
           width: settings.contentWidth - Style.space(40) - Style.spacing.md
           anchors.verticalCenter: parent.verticalCenter
           text: "Dock Settings"
@@ -174,6 +175,7 @@ PopupWindow {
           spacing: Style.spacing.md
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: "Icon Size"
             color: Color.popups.text
@@ -182,6 +184,7 @@ PopupWindow {
           }
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: String(Math.round(sizeSlider.liveValue)) + " px"
             color: Util.alpha(Color.popups.text, 0.6)
@@ -237,6 +240,7 @@ PopupWindow {
           spacing: Style.spacing.md
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: "Border opacity"
             color: Color.popups.text
@@ -245,6 +249,7 @@ PopupWindow {
           }
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: Math.round(borderOpacitySlider.liveValue) + "%"
             color: Util.alpha(Color.popups.text, 0.6)
@@ -278,6 +283,7 @@ PopupWindow {
           spacing: Style.spacing.md
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: "Background opacity"
             color: Color.popups.text
@@ -286,6 +292,7 @@ PopupWindow {
           }
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: Math.round(bgOpacitySlider.liveValue) + "%"
             color: Util.alpha(Color.popups.text, 0.6)
@@ -315,6 +322,7 @@ PopupWindow {
         spacing: Style.spacing.sm
 
         Text {
+          textFormat: Text.PlainText
           width: settings.contentWidth
           text: "Position"
           color: Color.popups.text
@@ -355,6 +363,7 @@ PopupWindow {
         spacing: Style.spacing.sm
 
         Text {
+          textFormat: Text.PlainText
           width: settings.contentWidth
           text: "Corner Shape"
           color: Color.popups.text

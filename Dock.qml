@@ -1634,6 +1634,7 @@ Item {
         borderSpec: root.tipBorder
 
         Text {
+          textFormat: Text.PlainText
           id: tipText
           anchors.centerIn: parent
           text: root.hoveredLabel

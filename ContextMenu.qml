@@ -251,6 +251,7 @@ PopupWindow {
           }
 
           Text {
+            textFormat: Text.PlainText
             visible: !row.isSep
             x: Style.spacing.lg
             anchors.verticalCenter: parent.verticalCenter
@@ -261,6 +262,7 @@ PopupWindow {
           }
 
           Text {
+            textFormat: Text.PlainText
             visible: !row.isSep
             x: Style.spacing.lg + menu.glyphColumn
             anchors.verticalCenter: parent.verticalCenter

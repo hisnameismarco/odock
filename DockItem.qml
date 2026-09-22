@@ -226,6 +226,7 @@ Item {
       cell.dock.slot * (cell.dock.tiles ? cell.dock.tileInset : 1.0) * cell.iconScale)
 
     Text {
+      textFormat: Text.PlainText
       visible: cell.glyph !== ""
       anchors.centerIn: parent
       text: cell.glyph
@@ -412,6 +413,7 @@ Item {
     border.color: Color.popups.background
 
     Text {
+      textFormat: Text.PlainText
       anchors.centerIn: parent
       text: "󰐃"
       color: Color.popups.background
@@ -482,6 +484,7 @@ Item {
     border.color: Util.alpha(Color.popups.background, 0.9)
 
     Text {
+      textFormat: Text.PlainText
       id: countText
       anchors.centerIn: parent
       text: cell.wins.length
